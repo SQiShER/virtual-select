@@ -1,11 +1,11 @@
 {
   "name": "virtual-select",
   "version": "1.0.1",
-  "description": "A searchable, themable, lazy-loading select component capable of handling thousands of options very efficiently by using the virtual scrolling technique. And magic.",
+  "description": "A searchable, themable, lazy-loading select component capable of handling thousands of options very efficiently",
   "main": "dist/virtual-select-jquery.min.js",
   "scripts": {
-    "test": "gulp test",
-    "karma": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "prepublish": "gulp clean build"
   },
   "repository": {
     "type": "git",
@@ -13,6 +13,13 @@
   },
   "author": "Daniel Bechler",
   "license": "MIT",
+  "keywords": [
+    "select",
+    "autocomplete",
+    "typeahead",
+    "dropdown",
+    "virtual scroll"
+  ],
   "bugs": {
     "url": "https://github.com/SQiShER/virtual-select/issues"
   },
