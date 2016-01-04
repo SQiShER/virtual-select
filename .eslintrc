@@ -1,0 +1,23 @@
+{
+  "globals": {
+    "angular": true,
+    "_": true,
+    "$": true
+  },
+  "ecmaFeatures": { "modules": true },
+  "rules": {
+    "linebreak-style": [2, "unix"],
+    "semi": [2, "always"],
+    "no-console": 0,
+    "array-bracket-spacing": [2, "never"],
+    "no-use-before-define": [2, "nofunc"],
+    "no-unused-vars": 2,
+    "max-len": [2, 120, 4]
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true
+  },
+  "extends": "airbnb/base"
+}

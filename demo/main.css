@@ -1,0 +1,10 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}

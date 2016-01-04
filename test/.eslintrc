@@ -1,0 +1,19 @@
+{
+	"globals": {
+		"expect": true,
+		"assert": true,
+		"module": true,
+		"inject": true,
+		"sinon": true
+	},
+	"env": {
+		"browser": true,
+		"jasmine": true,
+    "mocha": true,
+		"es6": true
+	},
+  "rules": {
+    "no-unused-expressions": 0,
+  },
+	"extends": "airbnb/base"
+}
