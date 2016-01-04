@@ -1,6 +1,6 @@
 {
   "name": "virtual-select",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A searchable, themable, lazy-loading select component capable of handling thousands of options very efficiently by using the virtual scrolling technique. And magic.",
   "main": "dist/virtual-select-jquery.min.js",
   "scripts": {
