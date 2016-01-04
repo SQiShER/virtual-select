@@ -58,6 +58,10 @@
     "q": "^1.4.1"
   },
   "jspm": {
+    "directories": {
+      "lib": "src"
+    },
+    "main": "virtual-select",
     "dependencies": {
       "array.prototype.findindex": "npm:array.prototype.findindex@^1.0.0",
       "lodash": "npm:lodash@^3.10.1"
