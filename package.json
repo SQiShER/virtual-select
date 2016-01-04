@@ -2,7 +2,10 @@
   "name": "virtual-select",
   "version": "1.0.0",
   "description": "A searchable, themable, lazy-loading select component capable of handling thousands of options very efficiently by using the virtual scrolling technique. And magic.",
-  "main": "index.js",
+  "main": "virtual-select-jquery.min.js",
+  "directories": {
+    "lib": "dist"
+  },
   "scripts": {
     "test": "gulp test",
     "karma": "karma start karma.conf.js"
