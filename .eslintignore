@@ -4,3 +4,4 @@ package.json
 config.js
 demo/*
 dist/*
+*.md

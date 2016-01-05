@@ -13,5 +13,9 @@
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "q": "^1.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^1.0.0"
   }
 }
