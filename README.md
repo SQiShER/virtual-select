@@ -26,3 +26,106 @@ I also had some specific goals in mind:
 Now you might say: "But `select2` or `selectize` can do all the stuff you need!". And you are probably right. The thing is, I've been using both of them for a couple of years now in the same project environment I created `virtual-select` for, and they never felt quite right for my scenario. Maybe the Angular wrappers got in the way. Maybe the fact that I always needed to dumb those nice looking components down to fit the "not so modern" design of the project I need it for. I don't really know. All I know is that I spent a lot of time trying to make those components behave just the way I needed them to and just couldn't make it work. After a couple of unsuccessful days, I decided that I might as well make it a fun learning project and write a custom tailored component myself.
 
 It was (and still is) a nice learning experience to write and publish an open-source JavaScript library with bleeding-edge technologies like JSPM and ES2015. So please take this project for what it is: it is a custom solution for a very particular set of problems I've been fighting with for a very long time. But more than that: it's not meant to be the next `select2` or `selectize`. If you are looking for a highly flexible select component, please look at those two libraries first. They will most likely make you very happy. If not, maybe we meet again. :)
+
+## Usage
+
+```javascript
+$('.select-container').virtualselect(options);
+```
+
+The `options` are:
+
+<table width="100%">
+	<tr>
+		<th valign="top" width="120px" align="left">Option</th>
+		<th valign="top" align="left">Description</th>
+		<th valign="top" width="60px" align="left">Type</th>
+		<th valign="top" width="60px" align="left">Optional</th>
+	</tr>
+	<tr>
+		<td valign="top"><code>dataProvider</code></td>
+		<td valign="top">An object responsible for loading, filtering and formatting the select options.</td>
+		<td valign="top"><code>object</code></td>
+		<td valign="top">no</td>
+	</tr>
+	<tr>
+		<td valign="top"><code>itemHeight</code></td>
+		<td valign="top">A number indicating the fix height of the option elements. If this is not present, the size will be determined by rendering a single option. Thus you should make sure to load your CSS before initializing virtual-select.</td>
+		<td valign="top"><code>number</code></td>
+		<td valign="top">yes</td>
+	</tr>
+	<tr>
+		<td valign="top"><code>onSelect</code></td>
+		<td valign="top">A function that is called whenever an option gets selected. The first argument of this function will be the selected item.</td>
+		<td valign="top"><code>function</code></td>
+		<td valign="top">yes</td>
+	</tr>	
+</table>
+
+The `dataProvider` is expected to provide the following functions and properties:
+
+<table width="100%">
+	<tr>
+		<th valign="top" width="120px" align="left">Option</th>
+		<th valign="top" align="left">Description</th>
+		<th valign="top" width="60px" align="left">Type</th>
+		<th valign="top" width="60px" align="left">Default</th>
+	</tr>
+	<tr>
+		<td valign="top"><code>items</code></td>
+		<td valign="top">An array of items to actually display as options. This is the list of filtered <code>availableItems</code>.</td>
+		<td valign="top"><code>array</code></td>
+		<td valign="top">[]</td>
+	</tr>
+	<tr>
+		<td valign="top"><code>availableItems</code></td>
+		<td valign="top">An array of all available items. The filter function should always operate on this array and update <code>items</code> accordingly.</td>
+		<td valign="top"><code>array</code></td>
+		<td valign="top">[]</td>
+	</tr>
+	<tr>
+		<td valign="top"><code>load</code></td>
+		<td valign="top">A function that is called once to load all items. Should return a Promise and update <code>items</code> and <code>availableItems</code> when done.</td>
+		<td valign="top"><code>function</code></td>
+		<td valign="top"></td>
+	</tr>
+	<tr>
+		<td valign="top"><code>filter</code></td>
+		<td valign="top">Called with a query argument. Should filter the <code>availableItems</code> ans assign the resulting subset to <code>items</code>.</td>
+		<td valign="top"><code>function</code></td>
+		<td valign="top"></td>
+	</tr>	
+	<tr>
+		<td valign="top"><code>identity</code></td>
+		<td valign="top">A function that is called to determine the identity of the given item.</td>
+		<td valign="top"><code>function</code></td>
+		<td valign="top"></td>
+	</tr>
+	<tr>
+		<td valign="top"><code>displayText</code></td>
+		<td valign="top">A function this is called to convert the given item into a string text representation. The optional second argument is a boolean indicating that the extended mode is enabled, which can be used to return an alternative text.</td>
+		<td valign="top"><code>function</code></td>
+		<td valign="top"></td>
+	</tr>
+	<tr>
+		<td valign="top"><code>noSelectionText</code></td>
+		<td valign="top">A function this is called get a text to be shown when no item is selected.</td>
+		<td valign="top"><code>function</code></td>
+		<td valign="top"></td>
+	</tr>		
+</table>
+
+### Methods
+
+The following calls assume that the virtualselect component has already been initialized:
+
+```javascript
+// set focus to select input field and show the options
+$('.select-container').virtualselect('focus');
+
+// select an item
+$('.select-container').virtualselect('select', {item:'x'});
+
+// strat fetching the data in the background without giving focus to the select component
+$('.select-container').virtualselect('load');
+```
