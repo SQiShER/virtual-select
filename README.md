@@ -103,13 +103,13 @@ The `dataProvider` is expected to provide the following functions and properties
 	</tr>
 	<tr>
 		<td valign="top"><code>displayText</code></td>
-		<td valign="top">A function this is called to convert the given item into a string text representation. The optional second argument is a boolean indicating that the extended mode is enabled, which can be used to return an alternative text.</td>
+		<td valign="top">A function called to convert the given item into a string text representation. The first argument is the item. The optional second argument is a boolean indicating that the extended mode is enabled, which can be used to return an alternative text.</td>
 		<td valign="top"><code>function</code></td>
 		<td valign="top"></td>
 	</tr>
 	<tr>
 		<td valign="top"><code>noSelectionText</code></td>
-		<td valign="top">A function this is called get a text to be shown when no item is selected.</td>
+		<td valign="top">A function called to get a text to show when no item is selected.</td>
 		<td valign="top"><code>function</code></td>
 		<td valign="top"></td>
 	</tr>		
