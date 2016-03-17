@@ -39,6 +39,7 @@
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-jspm": "^0.5.5",
+    "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "jquery": "^2.1.4",
     "jspm": "^0.16.19",
@@ -61,10 +62,10 @@
   },
   "dependencies": {},
   "jspm": {
+    "main": "virtual-select",
     "directories": {
       "lib": "src"
     },
-    "main": "virtual-select",
     "dependencies": {
       "array.prototype.findindex": "npm:array.prototype.findindex@^1.0.0",
       "lodash": "npm:lodash@^3.10.1"
