@@ -56,6 +56,11 @@ OptionList.prototype.init = function init() {
       }
     }))
     .on('mousedown', '.ui-virtual-select--item', event => {
+      // http://stackoverflow.com/a/17525223/1137104
+      event.target.unselectable = true;
+      event.preventDefault();
+    })
+    .on('mouseup', '.ui-virtual-select--item', event => {
       const index = $(event.currentTarget).data('index');
       this.channels.select(index);
     });
