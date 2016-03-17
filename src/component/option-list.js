@@ -55,7 +55,7 @@ OptionList.prototype.init = function init() {
         this.channels.activate(index);
       }
     }))
-    .on('click', '.ui-virtual-select--item', event => {
+    .on('mousedown', '.ui-virtual-select--item', event => {
       const index = $(event.currentTarget).data('index');
       this.channels.select(index);
     });
