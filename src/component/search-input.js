@@ -71,17 +71,20 @@ SearchInput.prototype.render = function render(state) {
   if (displayText !== this.$searchInputElement.attr('placeholder')) {
     console.debug(`updating placeholder: '${displayText}'`);
     this.$searchInputElement.attr('placeholder', displayText);
+    this.$searchInputElement.val(displayText);
   }
 
   // update value
-  if (state.query !== this.$searchInputElement.val()) {
-    console.debug(`updating query: '${state.query}'`);
-    this.$searchInputElement.val(state.query);
+  const query = state.open ? state.query : displayText;
+  if (query !== this.$searchInputElement.val()) {
+    console.debug(`updating query: '${query}'`);
+    this.$searchInputElement.val(query);
   }
 
   if (this.$searchInputElement.is(':focus') && !state.open && this.renderedState.open) {
     console.debug(`blurring search input`);
     this.$searchInputElement.trigger('blur');
+    this.$searchInputElement.val(displayText);
   }
 
   // FIXME: Not sure why I need the copy here
