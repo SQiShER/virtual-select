@@ -37,7 +37,10 @@ function activateItemAtIndex(state, options, index) {
   });
 }
 
-function cancelSelection(state, options) {
+function cancelSelection(state, options, {omitCallback = false} = {}) {
+  if (options.onClose && !omitCallback) {
+    options.onClose();
+  }
   const targetState = changeQuery(state, options, '');
   targetState.open = false;
   return targetState;
@@ -48,13 +51,14 @@ function selectItemAtIndex(state, options, index) {
   return selectItem(state, options, selectedItem);
 }
 
-function selectItem(state, options, item) {
+function selectItem(state, options, item, {omitCallback = false} = {}) {
   // notify the outside world about the selection
-  if (options.onSelect) {
+  if (options.onSelect && !omitCallback) {
     options.onSelect(item);
   }
-
-  const targetState = cancelSelection(state, options);
+  const targetState = cancelSelection(state, options, {
+    omitCallback,
+  });
   targetState.selectedItem = item;
   return targetState;
 }

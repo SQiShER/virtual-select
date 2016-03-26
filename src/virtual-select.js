@@ -122,7 +122,9 @@ function VirtualSelect(element, userOptions) {
 
   this.select = function select(item) {
     console.debug('selection changed from outside:', item);
-    changeState(fn.selectItem(state, options, item));
+    changeState(fn.selectItem(state, options, item, {
+      omitCallback: true,
+    }));
   };
 
   this.focus = function focus() {
