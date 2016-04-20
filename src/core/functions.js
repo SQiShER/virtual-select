@@ -11,6 +11,10 @@ function indexOfItem(dataProvider, item) {
   });
 }
 
+function sanitizeItem({dataProvider}, item) {
+  return indexOfItem(dataProvider, item) >= 0 ? item : null;
+}
+
 function startSelection(state, {dataProvider}) {
   const selectedItemIndex = indexOfItem(dataProvider, state.selectedItem);
   return $.extend({}, state, {
@@ -52,14 +56,16 @@ function selectItemAtIndex(state, options, index) {
 }
 
 function selectItem(state, options, item, {omitCallback = false} = {}) {
+  const sanitizedItem = sanitizeItem(options, item);
+
   // notify the outside world about the selection
   if (options.onSelect && !omitCallback) {
-    options.onSelect(item);
+    options.onSelect(sanitizedItem);
   }
   const targetState = cancelSelection(state, options, {
     omitCallback,
   });
-  targetState.selectedItem = item;
+  targetState.selectedItem = sanitizedItem;
   return targetState;
 }
 
