@@ -92,6 +92,9 @@ function changeQuery(state, options, query) {
 }
 
 function startLoading(state) {
+  if (options.onLoaded) {
+    options.onLoaded();
+  }
   return $.extend({}, state, {
     itemsLoading: true,
   });
