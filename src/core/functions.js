@@ -91,7 +91,7 @@ function changeQuery(state, options, query) {
   return state;
 }
 
-function startLoading(state) {
+function startLoading(state, options) {
   if (options.onLoaded) {
     options.onLoaded();
   }
