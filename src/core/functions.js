@@ -92,6 +92,9 @@ function changeQuery(state, options, query) {
 }
 
 function startLoading(state) {
+  if (options.onLoaded && !omitCallback) {
+    options.onLoaded();
+  }
   return $.extend({}, state, {
     itemsLoading: true,
   });
