@@ -91,16 +91,16 @@ function changeQuery(state, options, query) {
   return state;
 }
 
-function startLoading(state, options) {
-  if (options.onLoaded) {
-    options.onLoaded();
-  }
+function startLoading(state) {
   return $.extend({}, state, {
     itemsLoading: true,
   });
 }
 
-function finishLoading(state) {
+function finishLoading(state, options) {
+  if (options.onLoaded) {
+    options.onLoaded();
+  }
   return $.extend({}, state, {
     itemsLoading: false,
     itemsLoaded: true,
