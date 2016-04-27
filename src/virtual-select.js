@@ -102,7 +102,7 @@ function VirtualSelect(element, userOptions) {
     }
     changeState(fn.startLoading(state));
     return options.dataProvider.load().then(() => {
-      changeState(fn.finishLoading(state));
+      changeState(fn.finishLoading(state, options));
     });
   }
 
