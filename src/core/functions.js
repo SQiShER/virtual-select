@@ -107,6 +107,13 @@ function finishLoading(state, options) {
   });
 }
 
+function resetLoadedItems(state) {
+  return $.extend({}, state, {
+    itemsLoading: false,
+    itemsLoaded: false,
+  });
+}
+
 const actions = {
   startSelection,
   cancelSelection,
@@ -120,6 +127,7 @@ const actions = {
   toggleExtendedMode,
   startLoading,
   finishLoading,
+  resetLoadedItems,
 };
 
 export default actions;

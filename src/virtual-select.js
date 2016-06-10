@@ -106,6 +106,11 @@ function VirtualSelect(element, userOptions) {
     });
   }
 
+  function reloadItems() {
+    changeState(fn.resetLoadedItems(state));
+    return loadItems();
+  }
+
   function changeState(targetState) {
     // FIXME: rendering the search input causes a blur event, which in return
     // triggers another rendering cycle. in order for that to work, the state
@@ -135,6 +140,11 @@ function VirtualSelect(element, userOptions) {
   this.load = function load() {
     console.debug('loading triggered from outside');
     loadItems();
+  };
+
+  this.reload = function reload() {
+    console.debug('item reload triggered');
+    reloadItems();
   };
 
   changeState(state);
