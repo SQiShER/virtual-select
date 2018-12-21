@@ -136,4 +136,4 @@ Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homep
 
 [homepage]: https://saucelabs.com
 
-![](Powered by Sauce Labs badges gray.svg)
+![Powered by Sauce Labs badges gray.svg]()
