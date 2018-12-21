@@ -136,4 +136,4 @@ Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homep
 
 [homepage]: https://saucelabs.com
 
-![](https://raw.githubusercontent.com/SQiShER/virtual-select/master/Powered%20by%20Sauce%20Labs%20badges%20white.svg)
+![](https://github.com/SQiShER/virtual-select/blob/master/Powered%20by%20Sauce%20Labs%20badges%20white.svg)
