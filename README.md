@@ -134,6 +134,6 @@ $('.select-container').virtualselect('load');
 
 Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homepage]
 
-[homepage]: https://saucelabs.com
+[![Sauce Labs](https://github.com/SQiShER/virtual-select/blob/master/Powered%20by%20Sauce%20Labs%20badges%20white.svg)][homepage]
 
-![](https://github.com/SQiShER/virtual-select/blob/master/Powered%20by%20Sauce%20Labs%20badges%20white.svg)
+[homepage]: https://saucelabs.com
