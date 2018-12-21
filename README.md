@@ -129,3 +129,9 @@ $('.select-container').virtualselect('select', {item:'x'});
 // strat fetching the data in the background without giving focus to the select component
 $('.select-container').virtualselect('load');
 ```
+
+## Big Thanks
+
+Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homepage]
+
+[homepage]: https://saucelabs.com
