@@ -30,7 +30,10 @@ OptionList.prototype.on = function on(channel, callback) {
 OptionList.prototype.init = function init() {
   const $items = $('<div/>')
     .addClass('ui-virtual-select--items')
-    .css('overflow-y', 'scroll')
+    .css({
+      'overflow-y': 'auto',
+      'box-sizing': 'content-box'
+    })
     .on('scroll', throttle(() => {
       this.render(this.renderedState);
     }, 10))
